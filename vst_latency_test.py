@@ -2,7 +2,7 @@
 from mido import open_output, Message
 import time
 import sounddevice as sd
-from scipy.io.wavfile import write
+# from scipy.io.wavfile import write
 import numpy as np
 import pyprind
 import argparse
@@ -106,4 +106,4 @@ if __name__ == '__main__':
         sd.stop()
     if samples != 99999:
         print (f"\nlatency in samples: {samples_sum/n_tests:.0f} ({latency_sum/n_tests:.1f} ms)")
-    write('output.wav', fs, myrecording)  # Save as WAV file 
+    # write('output.wav', fs, myrecording)  # Save as WAV file 
