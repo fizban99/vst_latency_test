@@ -7,11 +7,11 @@ VST or VSTI are virtual instruments that you can use with your digital keyboard 
 Installation
 ############
 
-1.- You need python 3.x installed
-2.- Download the vst_latency_test.py script and requirements.txt or clone the repository
-3.- In the install directory run `pip3 install -r requirements.txt`
-4.- Download and install loopMIDI (https://www.tobias-erichsen.de/software/loopmidi.html). This is used to create a virtual MIDI port to emulate an external keyboard.
-5.- Start your VST of preference. See below for free and easy options.
+1. You need python 3.x installed
+2. Download the vst_latency_test.py script and requirements.txt or clone the repository
+3. In the install directory run `pip3 install -r requirements.txt`
+4. Download and install loopMIDI (https://www.tobias-erichsen.de/software/loopmidi.html). This is used to create a virtual MIDI port to emulate an external keyboard.
+5. Start your VST of preference. See below for free and easy options.
 
 
 Free VSTs
