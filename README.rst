@@ -2,7 +2,7 @@ vst_latency_test
 ################
 
 This script tests the latency of a DAC/Audio Interface/Sound Card when using a midi keyboard with a vst instrument.
-VST or VSTI are virtual instruments that you can use with your digital keyboard connected to the computer. Although you can use ASIO4ALL and your internal sound card, it is recommended to use an external sound card/audio interface that supports ASIO natively. For a nice playing experience, the time between pressing a key and hearing a sound should be minimal. This is called latency and should be less than 20ms in order not to interfere with the playing, although some players prefer values of less than 10ms. The best tool to test audio interface latencies is the RTL Utility (https://oblique-audio.com/rtl-utility.php) from Oblique Audio, but that assumes that the audio interface has both output and input. Some people, though, use DACs or USB cards without an input line and it is difficult to know the latency of those devices in this case. This script helps measuring that value and allows comparing it with other devices you might have.
+VST or VSTI are virtual instruments that you can use with your digital keyboard connected to the computer. Although you can use ASIO4ALL and your internal sound card, it is recommended to use an external sound card/audio interface that supports ASIO natively. For a nice playing experience, the time between pressing a key and hearing a sound should be minimal. This is called latency and should be less than 20ms in order not to interfere with the playing, although some players prefer values of less than 10ms. The best tool to test audio interface latencies is the RTL Utility (https://oblique-audio.com/rtl-utility.php) from Oblique Audio, but that assumes that the audio interface has both an output and an input and shows the round-trip latency (output latency + input latency). Some people, though, use DACs or USB cards without an input line and it is difficult to know the latency of those devices in this case. This script helps measuring that value and allows comparing it with other devices you might have.
 
 Installation
 ############
@@ -12,6 +12,10 @@ Installation
 3. In the install directory run `pip3 install -r requirements.txt`
 4. Download and install loopMIDI (https://www.tobias-erichsen.de/software/loopmidi.html). This is used to create a virtual MIDI port to emulate an external keyboard.
 5. Start your VST of preference. See below for free and easy options.
+6. Configure the VST Host to play through the audio device you want to test. Preferrably using ASIO. Start with a 128 buffer size.
+7. Connect a cable from the output of the audio device you want to test to another input device (such as the computer's soundcard)
+8. Run the vst_latency_test script.
+9. Repeat with a 256 buffer size. One way to estimate the latency of a 128 buffer size is actually substracting the 128 buffer size latency from the 256 buffer size latency. Since the input latency is the same, and the output latency tends to double when doubling the buffer size, the difference is aproximately the output latency of a 128 buffer size.
 
 
 Free VSTs
